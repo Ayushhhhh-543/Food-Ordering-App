@@ -1,8 +1,7 @@
 import { Image, StyleSheet } from "react-native";
-
-import { Text, View } from "@/components/Themed";
-import Colors from "@/constants/Colors";
-import { Product } from "@/assets/data/types";
+import { Text, View } from "./Themed";
+import { Product } from "assets/data/types";
+import Colors from "constants/Colors";
 
 export const defaultPizzaImage =
   "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/default.png";
