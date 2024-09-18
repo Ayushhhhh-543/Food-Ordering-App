@@ -1,6 +1,7 @@
 import { Product } from "@/assets/data/types";
 import Colors from "@/constants/Colors";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View, Pressable } from "react-native";
+import { Link } from "expo-router";
 
 
 export const defaultPizzaImage =
@@ -12,7 +13,8 @@ type ProductListItemProps = {
 
 const ProductListItem = ({ product }: ProductListItemProps) => {
   return (
-    <View style={styles.container}>
+    <Link href={`/menu/${product.id}`} asChild>
+    <Pressable style={styles.container}>
       <Image
         source={{ uri: product.image || defaultPizzaImage }}
         style={styles.image}
@@ -20,7 +22,10 @@ const ProductListItem = ({ product }: ProductListItemProps) => {
       />
       <Text style={styles.title}>{product.name}</Text>
       <Text style={styles.price}>${product.price}</Text>
-    </View>
+
+      
+    </Pressable>
+    </Link>
   );
 };
 
